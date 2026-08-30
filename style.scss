@@ -21,7 +21,7 @@ body {
     background: #ffffff;
     z-index: 9999; /* Cover everything on the page */
     pointer-events: none;
-    transition: height 1s cubic-bezier(0.7, 0, 0.3, 1) 2.5s; /* Starts at 2.5s and finishes in 1s to quickly chase the rocket */
+    transition: height 1s cubic-bezier(0.7, 0, 0.3, 1) 2.2s; /* Starts at 2.2s and finishes at 3.2s to match faster redirect */
 }
 
 body.launching .white-out-overlay {
@@ -530,15 +530,33 @@ body.launching .white-out-overlay {
 
     .slider {
         &.top-slider {
-            top: -2%; /* Pushed up away from text */
+            top: 0%;
         }
         &.bottom-slider {
-            bottom: -5%; /* Pushed down away from text */
+            bottom: 0%;
+        }
+        .slide-track {
+            width: calc(150px * 22); /* 130px width + 20px margin */
+            animation: scroll-mobile 20s linear infinite;
+            &.reverse {
+                animation: scroll-reverse-mobile 20s linear infinite;
+            }
         }
         .slide {
-            width: 120px; /* Slightly smaller images so they don't take up as much vertical space */
+            width: 130px;
+            height: 90px; /* Maintain aspect ratio */
             margin: 0 10px;
         }
     }
+}
+
+@keyframes scroll-mobile {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-150px * 11)); }
+}
+
+@keyframes scroll-reverse-mobile {
+    0% { transform: translateX(calc(-150px * 11)); }
+    100% { transform: translateX(0); }
 }
 
