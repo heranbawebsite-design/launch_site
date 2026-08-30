@@ -21,7 +21,7 @@ body {
     background: #ffffff;
     z-index: 9999; /* Cover everything on the page */
     pointer-events: none;
-    transition: height 1s cubic-bezier(0.7, 0, 0.3, 1) 2.2s; /* Starts at 2.2s and finishes at 3.2s to match faster redirect */
+    transition: height 0.6s cubic-bezier(0.7, 0, 0.3, 1) 1.8s; /* Starts at 1.8s, finishes at 2.4s. Very fast to beat the redirect! */
 }
 
 body.launching .white-out-overlay {
@@ -533,18 +533,19 @@ body.launching .white-out-overlay {
             top: 0%;
         }
         &.bottom-slider {
-            bottom: 0%;
+            top: 85%; /* Use top to position it firmly near the bottom of the screen */
+            bottom: auto;
         }
         .slide-track {
-            width: calc(150px * 22); /* 130px width + 20px margin */
+            width: calc(215px * 22); /* 195px width + 20px margin */
             animation: scroll-mobile 20s linear infinite;
             &.reverse {
                 animation: scroll-reverse-mobile 20s linear infinite;
             }
         }
         .slide {
-            width: 130px;
-            height: 90px; /* Maintain aspect ratio */
+            width: 195px; /* Increased by 50% */
+            height: 135px; /* Increased by 50% */
             margin: 0 10px;
         }
     }
@@ -552,11 +553,11 @@ body.launching .white-out-overlay {
 
 @keyframes scroll-mobile {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-150px * 11)); }
+    100% { transform: translateX(calc(-215px * 11)); }
 }
 
 @keyframes scroll-reverse-mobile {
-    0% { transform: translateX(calc(-150px * 11)); }
+    0% { transform: translateX(calc(-215px * 11)); }
     100% { transform: translateX(0); }
 }
 
