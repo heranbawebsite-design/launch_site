@@ -501,3 +501,44 @@ body.launching .white-out-overlay {
     }
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .background-text {
+        .faded-date {
+            font-size: 4rem; /* Scaled down for mobile */
+        }
+        .foreground-title {
+            .cursive {
+                font-size: 2.5rem;
+                margin-bottom: -10px;
+            }
+            .bold {
+                font-size: 3.8rem;
+                letter-spacing: -1px;
+                
+                &.smaller {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .main-content {
+        margin-top: 220px; /* Reduced margin to match smaller text */
+        transform: scale(0.9); /* Slightly shrink the button to fit smaller screens */
+    }
+
+    .slider {
+        &.top-slider {
+            top: 10%;
+        }
+        &.bottom-slider {
+            bottom: 10%;
+        }
+        .slide {
+            width: 150px; /* Smaller mockup images on mobile */
+            margin: 0 10px;
+        }
+    }
+}
+
