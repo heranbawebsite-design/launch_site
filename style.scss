@@ -21,7 +21,7 @@ body {
     background: #ffffff;
     z-index: 9999; /* Cover everything on the page */
     pointer-events: none;
-    transition: height 0.6s cubic-bezier(0.7, 0, 0.3, 1) 1.8s; /* Starts at 1.8s, finishes at 2.4s. Very fast to beat the redirect! */
+    transition: height 0.6s cubic-bezier(0.7, 0, 0.3, 1) 2.5s; /* Starts at 1.8s, finishes at 2.4s. Very fast to beat the redirect! */
 }
 
 body.launching .white-out-overlay {
