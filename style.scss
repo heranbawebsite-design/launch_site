@@ -25,7 +25,7 @@ body {
 }
 
 body.launching .white-out-overlay {
-    height: 100vh;
+    height: 150vh; /* Changed from 100vh to 150vh to bypass mobile viewport bugs where 100vh falls short */
 }
 
 .mockup-background {
@@ -505,7 +505,7 @@ body.launching .white-out-overlay {
 @media (max-width: 768px) {
     .background-text {
         .faded-date {
-            font-size: 4rem; /* Scaled down for mobile */
+            font-size: 7rem; /* Increased size so it's visible behind the foreground text again */
         }
         .foreground-title {
             .cursive {
@@ -530,10 +530,10 @@ body.launching .white-out-overlay {
 
     .slider {
         &.top-slider {
-            top: 0%;
+            top: 12%; /* Brought towards center */
         }
         &.bottom-slider {
-            top: 85%; /* Use top to position it firmly near the bottom of the screen */
+            top: 72%; /* Brought towards center */
             bottom: auto;
         }
         .slide-track {
