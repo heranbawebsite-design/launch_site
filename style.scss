@@ -530,13 +530,13 @@ body.launching .white-out-overlay {
 
     .slider {
         &.top-slider {
-            top: 10%;
+            top: -2%; /* Pushed up away from text */
         }
         &.bottom-slider {
-            bottom: 10%;
+            bottom: -5%; /* Pushed down away from text */
         }
         .slide {
-            width: 150px; /* Smaller mockup images on mobile */
+            width: 120px; /* Slightly smaller images so they don't take up as much vertical space */
             margin: 0 10px;
         }
     }
